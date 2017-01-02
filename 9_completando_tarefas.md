@@ -101,7 +101,7 @@ Depois de criar a rota, vamos criar o link no html. Agora vamos ver mais uma coi
 As views são basicamente o html onde vamos mostrar nossos dados, ou seja, o que o controller mandar para nós, é nas views que iremos mostrar.
 Vamos abrir o arquivo **app/views/tarefas/index.html.erb**:
 
-```ruby
+```html
 <p id="notice"><%= notice %></p>
 <h1>Listing Tarefas</h1>
 <table>
@@ -129,6 +129,7 @@ Vamos abrir o arquivo **app/views/tarefas/index.html.erb**:
 ```
 
 #### Mas antes de criar o link… vamos entender umas coisinhas
+
 Note que o arquivo não é total html, ele termina com extensão erb, que serve para que ele entenda código ruby. ,e para fazermos isso, usamos os seguintes sinais:
 
 * `<%` \- que mostra que código ruby está começando
@@ -137,7 +138,7 @@ Note que o arquivo não é total html, ele termina com extensão erb, que serve 
 
 No index.html.erb, podemos ver isso acontecendo muito, como na linha abaixo:
 
-```ruby
+```html
 <p id="notice"><%= notice %></p>
 ```
 
@@ -145,7 +146,7 @@ Nessa linha temos um parágrafo em html, que irá mostrar a mensagem (variável 
 
 Temos também, outra coisa nova no **index.html.erb**, são os laços de repetição em ruby, podemos ver ele sendo iniciado no seguinte linha:
 
-```ruby
+```html
 <% @tarefas.each do |tarefa| %>
   <tr>
     <td><%= tarefa.nome %></td>
@@ -159,3 +160,45 @@ Temos também, outra coisa nova no **index.html.erb**, são os laços de repeti�
 
 Note que nessa linha usamos o **<%** para iniciar o laço de repetição. Mas então, o que isso faz?
 **@tarefas** é uma lista, então estamos iterando cada item da lista e criando uma nova variável, chamada tarefa, após, dentro da **<tr>**, estamos mostrando os dados dessa tarefa, e criando os links para atualizar, excluir, e mostrar ela. Finalizando o laço de repetição com a linha **<% end %>**
+
+#### Agora sim, vamos criar o link!
+
+Agora que já vimos como usar código ruby dentro do html, e como funciona o laço de repetição, vamos criar o link para atualizar o estado da nossa tarefa! Voltando ao laço de repetição, vamos adicionar uma linha nova:
+
+```html
+<% @tarefas.each do |tarefa| %>
+      <tr>
+        <td><%= tarefa.nome %></td>
+        <td><%= tarefa.completo %></td>
+        <td><%= link_to 'Show', tarefa %></td>
+
+				<td><%= link_to 'Completar tarefa', completar_tarefa_path(tarefa) %></td>
+
+				<td><%= link_to 'Edit', edit_tarefa_path(tarefa) %></td>
+        <td><%= link_to 'Destroy', tarefa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+```
+
+Podemos adicionar a linha destacada no nosso arquivo index.html.rb, essa linha criará o link para o método que criamos na controller, e retornará para a mesma tela, com o estado da tarefa atualizado :D
+
+### Vamos testar?
+No terminal digite o comando abaixo para iniciar a aplicação, caso esteja rodando já, lembre de parar, teclando CTRL+C e iniciando de novo:
+
+```sh
+rails server
+```
+
+E no navegador:
+
+```
+localhost:3000
+```
+
+![Completando um tarefa link](images/9_completando_tarefas/completando_tarefa_link.png)
+
+Uhuul, o link novo está aparecendo! E o que acontece se clicarmos nele?
+
+![Tarefa Finalizada](images/9_completando_tarefas/tarefa_finalizada.png)
+
+Uhuul, a tarefa é atualizada! E a mensagem aparece!

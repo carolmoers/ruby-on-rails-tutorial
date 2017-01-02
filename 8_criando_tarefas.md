@@ -28,7 +28,7 @@ A tela vai ter os dados da tarefa que acabamos de criar, e uma mensagem de que f
 
 Vamos mudar isso?
 
-### vamos começar pelas mensagens
+### Vamos começar pelas mensagens
 
 Vamos começar a mexer no código agora :D
 
