@@ -14,4 +14,6 @@
   * [8. Criando tarefas](8_criando_tarefas.md)
   * [9. Completando tarefas](9_completando_tarefas.md)
 * [Quase lá](links_adicionais.md)
+* [Vamos deixar nosso app mais legal?]
+  * [10. Trabalhando com layouts](10_layouts.md)
 * [Conclusão](conclusao.md)
