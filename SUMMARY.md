@@ -13,4 +13,5 @@
   * [7. Procurando as tarefas](7_procurando_as_tarefas.md)
   * [8. Criando tarefas](8_criando_tarefas.md)
   * [9. Completando tarefas](9_completando_tarefas.md)
+* [Quase lá](links_adicionais.md)
 * [Conclusão](conclusao.md)
