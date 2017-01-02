@@ -16,4 +16,6 @@
 * [Quase lá](links_adicionais.md)
 * [Vamos deixar nosso app mais legal?]
   * [10. Trabalhando com layouts](10_layouts.md)
+  * [11. Alterando a página principal](11_alterando_a_pagina_principal.md)
+  * [12. Mexendo com CSS](12_mexendo_com_css.md)
 * [Conclusão](conclusao.md)
