@@ -1,0 +1,25 @@
+{
+  "name": "ruby-on-rails-tutorial",
+  "version": "0.0.1",
+  "description": "Vamos aprender a como fazer uma to-do list linda?",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "markdownlint-cli": "^0.2.0",
+    "onchange": "^2.5.0"
+  },
+  "scripts": {
+    "test": "markdownlint --config lint.json *.md",
+    "watch": "onchange '*.md' -v -- npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carolmoers/ruby-on-rails-tutorial.git"
+  },
+  "author": "Caroline Moers",
+  "license": "CC-BY-NC-4.0",
+  "bugs": {
+    "url": "https://github.com/carolmoers/ruby-on-rails-tutorial/issues"
+  },
+  "homepage": "https://github.com/carolmoers/ruby-on-rails-tutorial#readme"
+}
