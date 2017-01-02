@@ -3,15 +3,15 @@
 Agora podemos ver a tela das nossas tarefas, mas ainda não cadastramos nenhuma, vamos fazer isso?
 Se no terminal não estiver executantodo o comando abaixo, lembre-se de fazer :)
 
-´´´sh
+```sh
 rails server
-´´´
+```
 
 E no navegador
 
-´´´
+```
 localhost:3000
-´´´
+```
 
 Agora podemos clicar em **New tarefa** e vamos ir para outra tela, como a imagem abaixo.
 Podemos preencher o campo **Nome** e clicar no botão **Create Tarefa**
@@ -26,7 +26,7 @@ A tela vai ter os dados da tarefa que acabamos de criar, e uma mensagem de que f
 
 **Mas a mensagem está em inglês, assim como um monte de outras coisas.**
 
-Vamos mudar isso? 
+Vamos mudar isso?
 
 ### vamos começar pelas mensagens
 
@@ -36,12 +36,12 @@ Vamos abrir o arquivo **tarefas_controlles.rb**, que é o arquivo que controla t
 
 Esse arquivo tem vários _métodos_ (lembra como são métodos no ruby?), que estão separados nas ações de criar (_create_), atualizar (_update_), excluir (_destroy_), _index_ (lembra a ação que colocamos no routes.rb?) - esta será a ação que lista todas nossas tarefas, _show_ (mostrar a tarefa).
 
-Todas essas _ações_, são métodos padrões que o Rails cria automático para nós, quando executamos aquele primeiro comando para criar a Tarefa. 
+Todas essas _ações_, são métodos padrões que o Rails cria automático para nós, quando executamos aquele primeiro comando para criar a Tarefa.
 
 Agora, vamos procurar no arquivo onde estão as mensagens que aparecem, quando criamos ou atualizamos uma tarefa.
 Por exemplo, você pode procurar o método **create**, deve ser algo como o código abaixo:
 
-´´´ruby
+```ruby
 def create
     @tarefa = Tarefa.new(tarefa_params)
 
@@ -55,24 +55,24 @@ def create
       end
     end
   end
-´´´
+```
 
 Esse é o método chamado quando clicamos no botão **Create tarefa**.
 Ele cria uma tarefa nova, com os dados que colocamos no campo e retorna o html que mostra a tarefa, informando a mensagem. Vamos mudar a mensagem você pode procurar o método **create**, na linha onde está escrito
 
-´´´ruby
+```ruby
 format.html { redirect_to @tarefa, notice: 'Tarefa was successfully created.' }
-´´´
+```
 
-Vamos alterar para 
+Vamos alterar para
 
-´´´ruby
+```ruby
 format.html { redirect_to @tarefa, notice: 'A tarefa foi criada com sucesso.' }
-´´´
+```
 
 O método todo deve ficar mais ou menos assim:
 
-´´´ruby
+```ruby
 def create
     @tarefa = Tarefa.new(tarefa_params)
 
@@ -86,7 +86,7 @@ def create
       end
     end
   end
-´´´
+```
 
 Agora é a sua vez, pode fazer o mesmo no método **update** e **destroy** :D
 
@@ -94,15 +94,15 @@ Agora é a sua vez, pode fazer o mesmo no método **update** e **destroy** :D
 
 No terminal digite o comando abaixo para iniciar a aplicação, caso esteja rodando já, lembre de parar, teclando CTRL+C e iniciando de novo:
 
-´´´sh
+```sh
 rails server
-´´´
+```
 
 E no navegador:
 
-´´´
+```
 localhosr:3000
-´´´
+```
 
 Vamos criar uma tarefa nova, e ver o que acontece. Yeyy, nossa mensagem
 está em português!
